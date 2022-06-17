@@ -36,7 +36,7 @@ docker build -t <custom-image-name> <Dockerfile-dir>
 
 # Examples:
 
-docker build -t my-app-image .
+docker build -t node-app-image .
 ```
 
 #### List commands
@@ -55,22 +55,33 @@ docker ps
 
 #### Run commands
 
-Run docker image with custom name
+Run docker image
 
 - --name <custom-app-name> -> Name of the app
 - --d -> Detach mode (Run container in background and print container ID)
 - -p <outside_port>:<container_port> -> Allow to forward the traffic from the outside port to the container port
+
+- -v <path_to_folder_local>:<path_to_local_container> -> Allow sincronice a local folder with a container folder
 
 ```bash
 docker run -p <OUTSIDE_PORT>:<CONTAINER_PORT> -d --name <custom-app-name> <image-name>
 
 # Examples:
 
-docker run --name my-app my-app-image
+# Run image with custom name
+docker run --name node-app node-app-image
 
-docker run -d --name my-app my-app-image
+# Run image with detoch mode
+docker run -d --name node-app node-app-image
 
-docker run -p 4000:3000 -d --name my-app my-app-image
+# Run image with port forward to our localhost
+docker run -p 4000:3000 -d --name node-app node-app-image
+
+# Sync folder for windows CMD
+docker run -v  "%cd%:/app" -p 3000:3000 -d --name node-app node-app-image
+
+# Sync folder for Windows Powershell, Linux, Mac
+docker run -v  "$(pwd):/app" -p 3000:3000 -d --name node-app node-app-image
 ```
 
 Run command inside docker container
@@ -82,7 +93,7 @@ docker exec -it <name-app> <command>
 
 # Examples
 
-docker exec -it my-app bash
+docker exec -it node-app bash
 
 ```
 
@@ -107,7 +118,7 @@ docker rm <container-name> -f
 
 # Examples:
 
-docker rm my-app -f
+docker rm node-app -f
 ```
 
 ## Working with multiple containers

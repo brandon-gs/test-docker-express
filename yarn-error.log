@@ -1,0 +1,41 @@
+Arguments: 
+  /home/brandon/.nvm/versions/node/v16.13.0/bin/node /home/brandon/.nvm/versions/node/v16.13.0/bin/yarn add nodemon -D
+
+PATH: 
+  /home/brandon/.nvm/versions/node/v16.13.0/bin:/home/brandon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/brandon/Android/Sdk/emulator:/home/brandon/Android/Sdk/tools:/home/brandon/Android/Sdk/tools/bin:/home/brandon/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.13.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: connect EHOSTUNREACH 104.16.17.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)
+
+npm manifest: 
+  {
+    "name": "learn-docker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.18.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
